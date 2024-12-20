@@ -38,9 +38,9 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
 #endif
 
-    CURL *curl;
-    CURLcode res;
-    long response_code;
+    CURL *curl = NULL;
+    CURLcode res = CURLE_OK;
+    long response_code = 0L;
     char *url = "https://example.com";
 
     struct MemoryStruct chunk;
