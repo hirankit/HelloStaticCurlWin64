@@ -9,14 +9,15 @@ HelloCurl is a simple C project that demonstrates how to use and statically link
 
 # Working on the Project
 ## Using Visual Studio Code
-1. Open the Command Palette (`Ctrl+Shift+P`) and Select `CMake: Configure`.
-2. Open the Command Palette (`Ctrl+Shift+P`) and Select `CMake: Select Configure Preset` and choose `windows-debug-static`
-2. To debug, open the Command Palette (`Ctril+Shift+P`) and select `CMake: Debug`. 
+1. Lanuch Visual Studio Code via `x64 Native Tools Command Prompt`
+2. Open the Command Palette (`Ctrl+Shift+P`) and Select `CMake: Configure`.
+3. Open the Command Palette (`Ctrl+Shift+P`) and Select `CMake: Select Configure Preset` and choose `windows-debug-static`
+4. To debug, open the Command Palette (`Ctril+Shift+P`) and select `CMake: Debug`. 
 
 # Building the Project
 
 1. Clone the repository
-2. Lanuch Visual Studio Code via `x64 Native Tools Command Prompt`
+2. Lanuch: `x64 Native Tools Command Prompt`
 3. Configure the project:
     ```
     cmake --preset windows-release-static
