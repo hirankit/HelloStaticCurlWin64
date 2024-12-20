@@ -1,3 +1,5 @@
 .vscode/
 build/
 CMakeFiles/
+CMakeCache.txt
+**/*.pdb
