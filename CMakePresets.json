@@ -12,8 +12,7 @@
             "generator": "Ninja",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "cacheVariables": {
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
-                "CMAKE_TOOLCHAIN_FILE": "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
             }
         },
         {
@@ -40,7 +39,8 @@
             "inherits": "default",
             "description": "Default build with static libraries",
             "cacheVariables": {
-                "VCPKG_TARGET_TRIPLET": "x64-windows-static"
+                "VCPKG_TARGET_TRIPLET": "x64-windows-static",
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
             }
         },
         {
@@ -49,11 +49,6 @@
             "description": "Debug build with static libraries",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
-            },
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
             }
         },
         {
@@ -62,11 +57,6 @@
             "description": "Release build with static libraries",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
-            },
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
             }
         },
         {
@@ -76,7 +66,8 @@
             "inherits": "default",
             "cacheVariables": {
                 "VCPKG_TARGET_TRIPLET": "x64-linux",
-                "CMAKE_EXE_LINKER_FLAGS": "-static"
+                "CMAKE_EXE_LINKER_FLAGS": "-static",
+                "CMAKE_TOOLCHAIN_FILE": "$ENV{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
             }
         },
         {
@@ -85,11 +76,6 @@
             "description": "Debug build with static libraries",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug"
-            },
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Linux"
             }
         },
         {
@@ -98,11 +84,6 @@
             "description": "Release build with static libraries",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Release"
-            },
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Linux"
             }
         }
     ],
