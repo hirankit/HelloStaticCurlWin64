@@ -4,6 +4,9 @@
 #include <curl/curl.h>
 #ifdef _WIN32
 #include <windows.h>
+#ifdef _DEBUG
+#include <crtdbg.h>
+#endif
 #endif
 
 // Struct to hold the dynamic buffer
@@ -36,6 +39,10 @@ int main() {
 #ifdef _WIN32
     // Set console code page to UTF-8
     SetConsoleOutputCP(CP_UTF8);
+    #ifdef _DEBUG
+    // Enable memory leak checking
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    #endif
 #endif
 
     CURL *curl = NULL;
